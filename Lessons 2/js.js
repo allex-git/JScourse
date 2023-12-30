@@ -1,6 +1,5 @@
 const num1 = Number(prompt('Enter number 1:'))
 const num2 = Number(prompt('Enter number 2:'))
-const toHTML = document.querySelector("#total")
 if (!isNaN(num1 && num2)) { 
   let a = num1 + num2
   let b = num1 - num2
