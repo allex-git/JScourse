@@ -1,4 +1,3 @@
-
 const userName = prompt("Enter your first name:")
 const userSurname = prompt("Enter your last name:")
 
@@ -6,15 +5,11 @@ let email = prompt("Enter your email:")
 let yearOfBirth = prompt("Enter year of birth:")
 let toHTML = document.querySelector("#bodyJS")
 
-let fullName
-let checkEmail
-let age 
-
 // Виводимо ім'я та прізвище без пробілів на початку та в кінці рядка.
-fullName = userName.trim() + ' ' + userSurname.trim()
+let fullName = userName.trim() + ' ' + userSurname.trim()
 
 //Шукаємо  пробіли в рядку і видаляємо їх та приводимо до нижнього регістру.
-email = email.replaceAll(" ", "").toLowerCase()
+let email = email.replaceAll(" ", "").toLowerCase()
 
 //Перевіряємо email на наявність "@"
 if (email.includes("@")) {checkEmail = email}
@@ -23,7 +18,7 @@ if (email.endsWith('@')) {checkEmail = "not valid email <b>" + email + "</b>  (s
 if (!email.includes("@")) {checkEmail = "not valid email <b>" + email + "</b>  (symbol @ not exist)"}
 
 // Шукаємо  пробіли в рядку і видаляємо їх, вираховуємо вік користувача.
-age = (new Date()).getFullYear() - (yearOfBirth.replaceAll(" ", ""))
+let age = (new Date()).getFullYear() - (yearOfBirth.replaceAll(" ", ""))
 
 //Вмводимо результат в HTML (<body>)
 toHTML.innerHTML ="<ul> <li> Full name: " + fullName + "</li> <li> Email: " + checkEmail + "</li> <li> Age: " + age + "</li> </ul>"
