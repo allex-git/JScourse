@@ -12,6 +12,7 @@ let fullName = userName.trim() + ' ' + userSurname.trim()
 let email = email.replaceAll(" ", "").toLowerCase()
 
 //Перевіряємо email на наявність "@"
+let checkEmail
 if (email.includes("@")) {checkEmail = email}
 if (email.startsWith('@')) {checkEmail = "not valid email <b>" + email + "</b> (symbol @  find in first place)"}
 if (email.endsWith('@')) {checkEmail = "not valid email <b>" + email + "</b>  (symbol @  find in last place)"}
