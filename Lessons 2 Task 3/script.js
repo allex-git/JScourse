@@ -1,22 +1,29 @@
-// const userName = prompt("Enter your first name:");
-// const userSurname = prompt("Enter your last name:");
-const toHTML = document.querySelector("#elem");
-let userMail = prompt("Enter your email:");
 
-if (userMail.includes("@")) {
-  userMail = userMail.replaceAll(" ", "").toLowerCase();
-  toHTML.innerHTML = userMail;
-  console.log(userMail);
-} else {
-  userMail = userMail.replaceAll(" ", "").toLowerCase();
-  toHTML.innerHTML =
-    "not valid email <b>" + userMail + "</b>  (symbol @ not exist)";
-}
+const userName = prompt("Enter your first name:")
+const userSurname = prompt("Enter your last name:")
 
-// let result = `${userName.trim()} ${userSurname.trim()}\n${userMail.trim()}`;
-// console.log(result);
-// //console.log(userSurname.trim());
+let email = prompt("Enter your email:")
+let yearOfBirth = prompt("Enter year of birth:")
+let toHTML = document.querySelector("#bodyJS")
 
-// alert(result);
-// //alert(userSurname.trim());
-// //alert(userMail.trim());
+let fullName
+let checkEmail
+let age 
+
+// Виводимо ім'я та прізвище без пробілів на початку та в кінці рядка.
+fullName = userName.trim() + ' ' + userSurname.trim()
+
+//Шукаємо  пробіли в рядку і видаляємо їх та приводимо до нижнього регістру.
+email = email.replaceAll(" ", "").toLowerCase()
+
+//Перевіряємо email на наявність "@"
+if (email.includes("@")) {checkEmail = email}
+if (email.startsWith('@')) {checkEmail = "not valid email <b>" + email + "</b> (symbol @  find in first place)"}
+if (email.endsWith('@')) {checkEmail = "not valid email <b>" + email + "</b>  (symbol @  find in last place)"}
+if (!email.includes("@")) {checkEmail = "not valid email <b>" + email + "</b>  (symbol @ not exist)"}
+
+// Шукаємо  пробіли в рядку і видаляємо їх, вираховуємо вік користувача.
+age = (new Date()).getFullYear() - (yearOfBirth.replaceAll(" ", ""))
+
+//Вмводимо результат в HTML (<body>)
+toHTML.innerHTML ="<ul> <li> Full name: " + fullName + "</li> <li> Email: " + checkEmail + "</li> <li> Age: " + age + "</li> </ul>"
