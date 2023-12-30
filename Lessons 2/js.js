@@ -1,36 +1,26 @@
-// let userName = prompt('Enter your name: ')
-// alert('Hello, ' + userName + ' ! How are you? This is JavaScript world!')
-/* */
-const applePrice = 25
-const orangePrice = 110
-const bananaPrice = 62
+const num1 = Number(prompt('Enter number 1:'))
+const num2 = Number(prompt('Enter number 2:'))
 
-let totalPrice = 0
 
-const needApple = confirm('Do you need Apple?')
-if (needApple){
-    const appleCount = Number(prompt('How mutch Apples do ypu need (kg)?'))
-    if (!isNaN(appleCount)) totalPrice += appleCount * applePrice
-    else alert('You entered not a number')
-}
-const needOrange = confirm('Do you need Orange?')
-if (needOrange){
-    const orangeCount = Number(prompt('How mutch Oranges do ypu need (kg)?'))
-    if (!isNaN(orangeCount)) totalPrice += orangeCount * orangePrice
-    else alert('You entered not a number')
-}
-const needBanana = confirm('Do you need Banana?')
-if (needBanana){
-    const bananaCount = Number(prompt('How mutch Bananas do ypu need (kg)?'))
-    if (!isNaN(bananaCount)) totalPrice += bananaCount * bananaPrice
-    else alert('You entered not a number')
-}
+if (!isNaN(num1 && num2)) { 
+  let a = num1 + num2
+  let b = num1 - num2
+  let c = num1 * num2
+  let d = num1 / num2
+  alert(num1 + ' + ' + num2 + ' = ' + a + '\n' + num1 + ' - ' + num2 + ' = ' + b + '\n' + num1 + ' * ' + num2 + ' = ' + c + '\n' + num1 + ' / ' + num2 + ' = ' + d)
 
-const totalElement = document.querySelector('.total')
-console.log('totalElement', totalElement)
-if (totalPrice) {
-    console.log(`Your purchase cost ${totalPrice} UAH`) 
-} else {
-    console.log(`You bshopping card is empty`)
-}
-
+  const toHTML = document.querySelector(`.total`)
+    if (Number) {
+    const math1 = `${num1} + ${num2} = ${a} \n ${num1} - ${num2} = ${b} \n ${num1} * ${num2} = ${c} \n ${num1} / ${num2} = ${d} \n `
+    toHTML.innerText = math1
+    console.log( math1)
+    } 
+    else if (isNaN) {
+      
+      const emptyText = `You enter not number`
+  toHTML.innerText = emptyText
+  console.log(emptyText)
+ 
+  alert(emptyText)
+ } 
+  }
