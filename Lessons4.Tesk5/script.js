@@ -4,9 +4,14 @@ let numberStep = Number(prompt(`Введіть число для змінної 
 let sumOfFactorials = 0
 if (numberStep > 0) {
     if (numberFirst < numberSecond){
-        for (numberFirst; numberFirst <= numberSecond; numberFirst +=  + numberStep){
-            sumOfFactorials += numberFirst
-            console.log(numberFirst)   
+        for (let i = numberFirst; i <= numberSecond; i +=  numberStep){
+            console.log(`Число перебора: ${i}`)
+            console.log(`Факториал ${i}! = ${factorial(i)}`)
+            sumOfFactorials += factorial(i)
+            //// Честное copy past))) https://uk.javascript.info/task/factorial
+                function factorial(i) {
+                    return (i != 1) ? i * factorial(i - 1) : 1;    
+                }
         }
         console.log(`Сумма: ${sumOfFactorials}`)
     } else{
