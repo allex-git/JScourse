@@ -17,6 +17,6 @@ function sum(a, b) {
     return a + b
 }
 let result = main(a,b, (num) => {
-    return num - 1
+    return num
 })
 console.log(result)
