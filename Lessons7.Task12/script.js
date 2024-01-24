@@ -1,5 +1,5 @@
 let hour = Number(prompt('Введіть кількість годин:'))
-const secondsInHours = () => hour *3600
+const secondsInHours = () => hour * 3600
 let result = secondsInHours()
 if (isNaN(hour)) {
     alert(`Ви ввели не число`)
