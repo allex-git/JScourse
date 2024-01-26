@@ -71,7 +71,7 @@ let pTwo = document.createElement('p')
 let pParam = document.createElement('p')
 
 div.innerHTML = `Дан масив об'єктів. Вивести масив телефонних номерів користувачів, у яких баланс більше 2000 доларів. І знайти суму всіх балансів користувачів <br><br>`
-pOne.innerHTML = `1Телефонні номери користувачів баланс яких більше 2000 доларів: <br> ${filterUsersOfBalance} <br>`
+pOne.innerHTML = `Телефонні номери користувачів баланс яких більше 2000 доларів: <br> ${filterUsersOfBalance} <br>`
 pTwo.innerHTML = `Загальна сума балансу користувачів: $${users.reduce((sum, users) => sum + users.balance, 0).toFixed(2)} <br>`
 
 document.body.appendChild(div)
