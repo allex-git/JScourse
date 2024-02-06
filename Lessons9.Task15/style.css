@@ -1,0 +1,49 @@
+.kitchen {
+    display: flex;
+    justify-content: center;
+}
+.devices {
+   display: flex;
+   justify-content: center;
+}
+.cosmetics {
+   display: flex;
+   justify-content: center;
+}
+.p {
+
+   margin-top: -7;
+
+   position: relative;
+}
+.div-block {
+   padding-left:  20px;
+  padding-top: 10px;
+   height: 150px;
+   width: 200px;
+   background: grey;
+   margin: 5px;
+   margin-top: 20px;
+}
+.img {
+   display: block;
+   margin: 0 auto;
+   height: 55px;
+}
+
+.span {
+   margin-left: 0px;
+}
+
+.hr {
+    width: 67%;
+    position: absolute;
+    margin: 9.5% 0 0 0;
+ }
+
+
+hr {
+   
+    margin: 0px;
+    margin-right: 0px;
+}
