@@ -118,11 +118,11 @@ class User {
 		let userNaming = document.createElement(`div`)
 			userNaming.className = `user__naming`
 		let userName = document.createElement(`p`)
-			userName.innerHTML = this.name
+			userName.innerHTML = `Name: <strong>${this.name}</strong>`
 			userNaming.appendChild(userName)
 		let userAge = document.createElement(`p`)
 			userNaming.appendChild(userAge)
-			userAge.innerHTML = this.age
+			userAge.innerHTML = `Age: <strong>${this.age}</strong>`
 		let userInfoStudent = document.createElement(`div`)
 			userInfoStudent.className = `user__info--role student`
 		let imageRole = document.createElement(`img`)
@@ -182,7 +182,7 @@ class Lector extends User {
 	role = `lector`
 	renderCourses(){
 		let userCourses = document.createElement(`div`)
-				userCourses.className = `user__courses`
+				userCourses.className = `user__courses admin--info`
 		
 		this.courses.forEach( (course) => {
 				
@@ -196,9 +196,18 @@ class Lector extends User {
 					break
 				}
 			}
-			let p = document.createElement(`p`)
-			p.innerHTML = `Title:${course.title} <span class="${grade}">${grade}</span>`
-			userCourses.appendChild(p)
+			let userCoursesLector = document.createElement(`div`)
+			userCoursesLector.className = `user__courses--course lector`
+			userCourses.appendChild(userCoursesLector)
+			let pTitle = document.createElement(`p`)
+			let pScore = document.createElement(`p`)
+			let pLector = document.createElement(`p`)
+			pTitle.innerHTML = `Title: <strong>${course.title}</strong>`
+			pScore.innerHTML = `Lector's score: <span class="${grade}">${grade}</span>`
+			pLector.innerHTML = `Average student's score: <span class="${grade}">${grade}</span>`
+			userCoursesLector.appendChild(pTitle)
+			userCoursesLector.appendChild(pScore)
+			userCoursesLector.appendChild(pLector)
 			
 		})
 		return userCourses;
@@ -210,9 +219,7 @@ class Admin extends User {
 	renderCourses(){
 		let userCourses = document.createElement(`div`)
 				userCourses.className = `user__courses admin--info`
-		let userCoursesAdmin = document.createElement(`div`)
-				userCoursesAdmin.className = `user__courses--course admin`
-				userCourses.appendChild(userCoursesAdmin)
+
 		this.courses.forEach( (course) => {
 				
 			let grade = `Nan`
@@ -225,11 +232,18 @@ class Admin extends User {
 					break
 				}
 			}
+			let userCoursesAdmin = document.createElement(`div`)
+			userCoursesAdmin.className = `user__courses--course admin`
+			userCourses.appendChild(userCoursesAdmin)
 			let pTitle = document.createElement(`p`)
-			let p = document.createElement(`p`)
-			pTitle.innerHTML = `Title:${course.title} <br> <span class="${grade}">${grade}</span>`
-			
+			let pScore = document.createElement(`p`)
+			let pLector = document.createElement(`p`)
+			pTitle.innerHTML = `Title: <strong>${course.title} </strong>`
+			pScore.innerHTML = `Admin's score: <span class="${grade}">${grade}</span>`
+			pLector.innerHTML = `Lector: <strong>${course.lector}</strong>`
 			userCoursesAdmin.appendChild(pTitle)
+			userCoursesAdmin.appendChild(pScore)
+			userCoursesAdmin.appendChild(pLector)
 		
 		})
 		return userCourses;
@@ -254,7 +268,6 @@ divUsers.className = `users`
 		}
 		if(user.role === `lector`){
 			let lector = new Lector (user.img, user.name, user.age, user?.courses)
-			// lector.render()
 			tile.appendChild(lector.render())
 			let _courses = lector.renderCourses()
 			if (_courses) {
@@ -263,7 +276,6 @@ divUsers.className = `users`
 		}
 		if(user.role === `admin`){
 			let admins = new Admin (user.img, user.name, user.age, user?.courses)
-			// admins.render()
 			tile.appendChild(admins.render())
 			let _courses = admins.renderCourses()
 			if (_courses) {
