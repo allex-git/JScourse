@@ -183,6 +183,7 @@ class Lector extends User {
 	renderCourses(){
 		let userCourses = document.createElement(`div`)
 				userCourses.className = `user__courses`
+		
 		this.courses.forEach( (course) => {
 				
 			let grade = `Nan`
@@ -208,7 +209,10 @@ class Admin extends User {
 	role = `admin`
 	renderCourses(){
 		let userCourses = document.createElement(`div`)
-				userCourses.className = `user__courses`
+				userCourses.className = `user__courses admin--info`
+		let userCoursesAdmin = document.createElement(`div`)
+				userCoursesAdmin.className = `user__courses--course admin`
+				userCourses.appendChild(userCoursesAdmin)
 		this.courses.forEach( (course) => {
 				
 			let grade = `Nan`
@@ -221,10 +225,12 @@ class Admin extends User {
 					break
 				}
 			}
+			let pTitle = document.createElement(`p`)
 			let p = document.createElement(`p`)
-			p.innerHTML = `Title:${course.title} <span class="${grade}">${grade}</span>`
-			userCourses.appendChild(p)
+			pTitle.innerHTML = `Title:${course.title} <br> <span class="${grade}">${grade}</span>`
 			
+			userCoursesAdmin.appendChild(pTitle)
+		
 		})
 		return userCourses;
 	}
