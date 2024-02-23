@@ -1,0 +1,128 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+    background-color: #6c2d2c;
+    margin: 0;
+    padding: 0;
+}
+
+.main {
+    max-width: 400px;
+    margin: 120px auto;
+    padding: 20px;
+    background-color: #f1dcc9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0, 0.2);
+    text-align: center;
+}
+
+h1 {
+    color: #fff;
+    margin-left: 20px;
+}
+
+h2 {
+    color: #42313a;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 5px;
+    border: none;
+    font-size: 14px;
+    border-radius: 4px;
+    outline: none;
+    border-color: #42313a;
+    border: 1px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #42313a;
+}
+
+button {
+    padding: 10px 19px;
+    background-color: #6c2d2c;
+    color: #fff;
+    border: none;
+    border: 4px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #9f4646;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 4px rgb(159, 70, 70, 0.1);
+}
+
+.delete-button {
+    background-color: #41313a;
+    border-color:#6c2d2c;
+    color: #ddd;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin-right: 5px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #f1dcc9;
+    border-color: 6c2d2c;
+    color: #42313a;
+    font-size: 13px;
+    padding: 5px 11px;
+    margin-right: 3px;
+}
+
+.edit-button {
+    background-color:#8b4b40;
+    border-color: 6c2d2c;
+    color: #f1dcc9;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin-right: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+    background-color:#f1dcc9;
+    border-color: 6c2d2c;
+    color: #42313a;
+    font-size: 13px;
+    padding: 5px 11px;
+    margin-right: 9px;
+}
