@@ -1,6 +1,7 @@
 const taskInput = document.getElementById("taskInput")
 const taskList = document.getElementById("taskList")
 tasks = JSON.parse(localStorage.getItem("tasks")) || []
+displayTasks()
 
 function addTask(){
   const taskText = taskInput.value.trim()
